@@ -1,0 +1,50 @@
+/* Le conteneur principal */
+.bento-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  grid-template-rows: auto 1fr auto;      /* 3 lignes adaptatives */
+  gap: 15px;                             /* Espace entre les blocs */
+  height: 100vh;                         /* Prend toute la hauteur de l'écran */
+  padding: 15px;
+  
+  /* Configuration demandée dans l'image */
+  grid-template-areas: 
+    "h h h" 
+    "m m s" 
+    "f f f";
+}
+
+/* Assignation des classes aux zones de la grille */
+.zone-header {
+  grid-area: h;
+  background-color: #1e1e2f;
+  color: white;
+}
+
+.zone-main {
+  grid-area: m;
+  background-color: #2a2a40;
+  color: white;
+}
+
+.zone-sidebar {
+  grid-area: s;
+  background-color: #3b3b54;
+  color: white;
+}
+
+.zone-footer {
+  grid-area: f;
+  background-color: #1e1e2f;
+  color: white;
+}
+
+/* Un petit style général pour le texte à l'intérieur */
+.bento-container > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-weight: bold;
+}

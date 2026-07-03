@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS grid</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="grid-container">
+        <header>
+            <div class="logo"> BentoGourmet</div>
+            <p class="slogan">Là où les papilles se réveillent</p>
+        </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li> <a href="index.html" class="active"> Accueil</a></li>
+                <li> <a href="#">Notre Carte</a></li>
+                <li> <a href="#">Formules</a></li>
+                <li> <a href="#">Contact</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- Zone 3: Barre latérale gauche (Filtres)-->
+         <aside class="left-sidebar">
+            <h1>Filtres</h1>
+            <label for=""> <input type="checkbox">Burgers</label>
+            <label for=""> <input type="checkbox">Salades</label>
+            <label for=""> <input type="checkbox">Desserts</label>
+
+         </aside>
+
+         <!-- Zone 4: Contenu principal (Main)-->
+          <main class="main-content">
+            <section class="carte-restaurant">
+                <h2>Notre Carte Gourmande</h2>
+                <p class="section-subtile">Découvrir nos délices</p>
+
+                <div class="galerie-plats">
+                    <article class="food-card">
+                        <img src="img/burger1.jpg" alt="Burger" class="food-img">
+                        <div class="info-food">
+                            <h3>Burger Royal</h3>
+                            <p class="price">6500fcfa</p>
+
+
+                        </div>
+
+                    </article>
+                    <article class="food-card">
+                        <img src="img/salade.jpg" alt="salade" class="food-img">
+                        <div class="food-info">
+                            <h3>Salade niçoise</h3>
+                            <p class="price">4000fcfa</p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="food-card">
+                        <img src="img/dess.jpg" alt="dessert" class="food-img">
+                        <div class="food-info">
+                            <h3>strawberry</h3>
+                            <p class="price">6000fcfa</p>
+
+                        </div>
+
+                    </article>
+                    <article class="food-card">
+                        <img src="img/burger3.jpg" alt="burger" class="food-img">
+                        <div class="food-info">
+                            <h3>Cheese burger</h3>
+                            <p class="price">6500fcfa</p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+          </main>
+
+         <!-- Zone 5: Le pied de page--> 
+          <footer class="footer">
+            <p>copyright 2026 BentoGourmet</p>
+
+          </footer>
+
+    </div>
+    
+</body>
+</html>

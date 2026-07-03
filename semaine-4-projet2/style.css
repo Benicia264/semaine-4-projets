@@ -1,0 +1,206 @@
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f1a;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 240px 1fr;       /* Filtres à gauche, contenu à droite */
+  grid-template-rows: auto auto 1fr auto; /* Lignes : Header, Nav, Main, Footer */
+  
+  
+  grid-template-areas: 
+    "head head"
+    "navigation navigation"
+    "left main"
+    "foot foot";
+    
+  min-height: 100vh;
+}
+
+
+
+
+header { 
+  grid-area: head; 
+  background-color: #1a1a2e; 
+  padding: 25px 40px;
+  border-bottom: 2px solid #e67e22;
+
+  /* Sous-grille Grid pour aligner le logo et le slogan sur une seule ligne */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+header .logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700; /* Très gras pour l'effet logo */
+  color: #e67e22;
+  letter-spacing: 0.5px;
+}
+
+header .slogan {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300; /* Très léger pour contraster */
+  color: #aaa;
+  font-style: italic;
+  text-align: right; /* Pousse le slogan tout à droite */
+}
+
+
+.main-nav { 
+  grid-area: navigation; 
+  background-color: #161625; 
+  border-bottom: 1px solid #222;
+  
+  /* Rendre la navigation collante au défilement */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* S'assure que la nav passe par-dessus les images lors du scroll */
+}
+                
+.main-nav ul {
+  list-style: none;
+  
+  /* Alignement horizontal complet en Grid pure */
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  justify-content: center;
+  gap: 15px;
+}
+
+.main-nav a {
+  display: block;
+  padding: 15px 30px;
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.main-nav a:hover, 
+.main-nav a.active {
+  color: #fff;
+  background-color: #e67e22;
+}
+
+
+.left-sidebar { 
+  grid-area: left; 
+  background-color: #131324; 
+  padding: 35px 25px;
+}
+
+.left-sidebar h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.left-sidebar label {
+  /* alignement de la checkbox et du texte en sous-grille grid */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  color: #ccc;
+  font-size: 1.05rem;
+}
+
+
+.main-content { 
+  grid-area: main; 
+  background-color: #0f0f1a; 
+  padding: 40px 35px; 
+}
+
+.carte-restaurant h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #e67e22;
+  margin-bottom: 5px;
+}
+
+.section-subtile {
+  color: #aaa;
+  margin-bottom: 35px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Mosaïque d'images adaptative en Grid */
+.galerie-plats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 30px; 
+}
+
+.footer { 
+  grid-area: foot; 
+  background-color: #1a1a2e; 
+  padding: 20px; 
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #222;
+}
+
+
+.food-card { 
+  background-color: #161625; 
+  border-radius: 12px; 
+  overflow: hidden; 
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+}
+
+.food-img { 
+  width: 100%; 
+  height: 190px; 
+  object-fit: cover; /* Garantit que les images ne se déforment jamais */
+}
+
+/* Bloc texte interne respectant le Box Model */
+.info-food, .food-info { 
+  padding: 20px; 
+}
+
+.info-food h3, .food-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.price { 
+  color: #e67e22; 
+  font-weight: 600; 
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+}
